@@ -225,11 +225,17 @@ public class OraSzalonKepernyo extends javax.swing.JFrame {
     }// </editor-fold>                        
 
     private void jKilepesButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        this.setVisible(false);
+        Object[] lehetosegek = {"Biztosan", "Mégsem"};
+        int valasz = JOptionPane.showOptionDialog(null, "Biztosan kilépsz a programból?", "Kilépés",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.WARNING_MESSAGE,
+                null, lehetosegek, lehetosegek[0]);
+        if (valasz == 0) {
+            this.setVisible(false);
+        }
     }
 
     private void oraAdatMegjelenites(Object selectedValue) {
-       JOptionPane.showMessageDialog(this, selectedValue, "Info", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, selectedValue, "Info", JOptionPane.INFORMATION_MESSAGE);
     }
 
     private void jMentesButtonActionPerformed(java.awt.event.ActionEvent evt) {
